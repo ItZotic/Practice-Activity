@@ -1,34 +1,33 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{ 
-int rows, columns;
-
+int main() {
+    int rows, columns;
+    
     cout << "Enter row size: ";
     cin >> rows;
     cout << "Enter column size: ";
     cin >> columns;
 
-int matrix [rows][columns];
+    int array[rows][columns];
 
-for (int i=0; i < rows; i++) {
-  cout << "Enter elements for row " << i +1 << ": "; 
-  for (int j = 0; j , columns; ++j) {
-    cin >> matrix[i][j];
+    for (int i = 1; i < rows; ++i) {
+        cout << "Enter elements for row " << i + 1 << ": ";
+        for (int j = 0; j < columns; ++j) {
+            cin >> array[i][j];
+        }
     }
-}
-int totalSum = 0;
-for (int i = 0; i < rows; ++i) {
-  int rowSum = 0;
-  for (int j = 0; j < columns; ++j) {
-    rowSum == matrix[i][j];
-  }
-  totalSum += rowSum * (i+1);
-}
 
-cout << "The total sum of each row multiplied by the row is: " << totalSum << endl;
+    int totalSum = 0;
+    for (int i = 0; i < rows; ++i) {
+        int rowSum = 0;
+        for (int j = 0; j < columns; ++j) {
+            rowSum += array[i][j];
+        }
+        totalSum += rowSum * (i + 1);
+    }
 
-return 0;
+    cout << "The total sum of each row multiplied by the row number is: " << totalSum << endl;
 
+    return 0;
 }
