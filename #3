@@ -3,6 +3,10 @@ using namespace std;
 
 int main()
 {
+    float radius;
+    float circumference;
+    float area;
+    
 cout << "Enter radius: " ;
 cin >> radius;
 
