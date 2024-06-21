@@ -1,0 +1,96 @@
+#1
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void findMax(int* element, int arraySize)
+{
+int maxIndex = arraySize - 1;
+sort(element, element + arraySize);
+cout << "Maximum element: " << element[maxIndex] << endl;
+}
+
+int main() 
+{
+int arraySize;
+cout << "Type in the size for the array: ";
+cin >> arraySize;
+
+int* element = new int [arraySize];
+ for (int i=0; i < arraySize; i++) {
+  cout << "Enter element no. " << (i + 1) << ": ";
+  cin >> element[i];
+}
+
+
+findMax(element, arraySize);
+
+delete[] element;
+return 0;
+}
+
+#2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows, columns;
+
+    cout << "Row size: ";
+    cin >> rows;
+    cout << "Column size: ";
+    cin >> columns;
+
+    int arr[rows][columns];
+
+    for (int i = 1; i <= rows; ++i) {
+        for (int j = 1; j <= columns; ++j) {
+            cout << "R" << i << "C" << j << ": ";
+            cin >> arr[i - 1][j - 1];
+        }
+    }
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    int total = 0;
+    for (int i = 0; i < rows; ++i) {
+        int rowSum = 0;
+        for (int j = 0; j < columns; ++j) {
+            rowSum += arr[i][j];
+        }
+        total += rowSum * (i + 1);
+    }
+
+    cout << "Total: " << total << endl;
+
+    return 0;
+}
+
+#3
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float radius;
+    float circumference;
+    float area;
+    
+cout << "Enter radius: " ;
+cin >> radius;
+
+area = 3.14 * radius * radius;
+circumference = 2 * 3.14 * radius;
+
+cout << "Area: " << area << endl;
+cout << "Circumference " << circumference << endl;
+
+return 0;
+
+}
